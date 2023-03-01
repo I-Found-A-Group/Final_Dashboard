@@ -15,6 +15,9 @@ Column {data-width=650}
 
 ### Chart A
 
+```{r}
+readRDS("BenfordsLaw.rds")
+```
 
 
 Column {data-width=350}
@@ -22,7 +25,13 @@ Column {data-width=350}
 
 ### Chart B
 
+```{r}
+readRDS("CityCouncilAge.rds")
+```
 
 ### Chart C
 
+```{r}
+readRDS("USWorkMap.rds")
+```
 
