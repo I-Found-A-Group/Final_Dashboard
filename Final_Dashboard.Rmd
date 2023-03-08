@@ -2,8 +2,7 @@
 title: "Final Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+    orientation: rows
 ---
 
 ```{r setup, include=FALSE}
@@ -12,26 +11,25 @@ library(ggplot2)
 library(scales)
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
 
-### Chart A
+---------------------------------------------------------------
+
+### Benford's Law
 
 ```{r}
 readRDS("BenfordsLaw.rds")
 ```
 
 
-Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Seattle City Council Ages
 
 ```{r}
 readRDS("CityCouncilAge.rds")
 ```
 
-### Chart C
+### Best States to Work in the USA
 
 ```{r}
 readRDS("USWorkMap.rds")

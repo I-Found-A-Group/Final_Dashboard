@@ -41,14 +41,14 @@ ben4 = ben3 + scale_y_continuous(breaks=c(0,5,10,15,20,25,30,35),
                                    limits = c(0, 35),
                                    labels=unit_format(suffix = '%'))
 
-paste0(round(ben$perc,2), '%')
+#paste0(round(ben$perc,2), '%')
 
-LABELS=paste0(round(ben$perc,2), '%')
+#LABELS=paste0(round(ben$perc,2), '%')
 ###
 ben5 = ben4 + geom_text(vjust=0, #hjust if flipping
                           size = 3,
                           aes(y = perc ,
-                              label = LABELS))
+                              label =paste0(round(perc,2), '%')))
 
 ben$digit <- as.factor(ben$digit)
 
