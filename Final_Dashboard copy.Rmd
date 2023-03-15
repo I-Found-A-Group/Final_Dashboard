@@ -1,5 +1,5 @@
 ---
-title: "Data Visualizations by Andrea Evans and Tallis Moore"
+title: "Final Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -17,7 +17,7 @@ Benford's Law
 Column
 ----------------
 
-### Benford's Law: Distribution of Leading Digit
+### Benford's Law Distribution of Leading Digit
 
 ```{r}
 readRDS("BenfordsLaw.rds")
