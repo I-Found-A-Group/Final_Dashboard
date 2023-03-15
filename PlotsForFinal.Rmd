@@ -154,12 +154,21 @@ library(dplyr)
 work_index3$cluster=dplyr::recode_factor(work_index3$cluster, 
                   `1`='1',`2` = '2',`4`='3',`3`='4',.ordered = T)
 
-work1 <- plot_usmap(data = work_index3, values = "cluster",na.rm=TRUE, color="azure4")+ scale_fill_brewer(palette='RdYlBu')+ labs(title = "Best States to Work on a Scale of 1 to 4",subtitle = subtext)+ theme(legend.title=element_blank())
+work1 <- plot_usmap(data = work_index3, values = "cluster",na.rm=TRUE, color="azure4")+ scale_fill_brewer(palette='RdYlBu')+ labs(title = "Best States to Work on a Scale of 1 to 4",subtitle = subtext,caption = "Source: Oxfam")+ theme(legend.title=element_blank())
 
 
 ##Final Map
 work2=work1+theme(plot.title = element_text(hjust = .5,face="bold",size = 14),plot.subtitle = element_text(hjust = .5,face="italic"))
 work2
+
+
+titleText='Expected Frequency of Each Digit Appearing First in Data'
+subtext='How often will each digit be the leading digit according to Benford?'
+sourceText='Source: Benfords Law'
+ben2 = ben1 + labs(title=titleText,subtitle = subtext,
+                     x = 'First Digit',
+                     y = 'Frequency',
+                     caption = sourceText)
 ```
 
 ```{r save-USWorkMap, echo=FALSE}
