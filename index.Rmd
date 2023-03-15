@@ -1,5 +1,5 @@
 ---
-title: "Index"
+title: "Data Visualizations by Andrea Evans and Tallis Moore"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
