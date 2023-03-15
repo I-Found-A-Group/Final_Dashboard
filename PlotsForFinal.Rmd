@@ -145,7 +145,17 @@ library(ggplot2)
 
 plot_usmap(data = work_index3, values = "cluster",na.rm=TRUE, color="azure4")+scale_fill_brewer(palette='RdYlBu')+ labs(title = "Best States to Work on a Scale of 1 to 4",subtitle = subtext)+ theme(legend.title=element_blank())
 
+work <- plot_usmap(data = work_index3, values = "cluster",na.rm=TRUE, color="azure4")+ scale_fill_brewer(palette='RdYlBu')+ labs(title = "Best States to Work on a Scale of 1 to 4",subtitle = subtext)+ theme(legend.title=element_blank())
+
+##checking values and re-coding to make clusters ordered by value
+
+library(dplyr)
+
+work_index3$cluster=dplyr::recode_factor(work_index3$cluster, 
+                  `1`='1',`2` = '2',`4`='3',`3`='4',.ordered = T)
+
 work1 <- plot_usmap(data = work_index3, values = "cluster",na.rm=TRUE, color="azure4")+ scale_fill_brewer(palette='RdYlBu')+ labs(title = "Best States to Work on a Scale of 1 to 4",subtitle = subtext)+ theme(legend.title=element_blank())
+
 
 ##Final Map
 work2=work1+theme(plot.title = element_text(hjust = .5,face="bold",size = 14),plot.subtitle = element_text(hjust = .5,face="italic"))
